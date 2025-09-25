@@ -1,10 +1,11 @@
+<!-- Name: Harsheta Sharma Student ID: 991753207 -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Add Movie 🎞️</title>
     <style>
-        /* General styling */
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -27,7 +28,7 @@
             z-index: -1;
         }
 
-        /* Container Styling */
+
         .container {
             background: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -99,19 +100,19 @@
 </head>
 <body>
 <video autoplay loop muted playsinline class="bg-video">
-    <source src="/addmovieVideo.mp4" type="video/mp4">
+    <source src="addmovieVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <div class="container">
     <h2>Add a New Movie 🍿</h2>
 
     <form th:action="@{/add}" method="POST" th:object="${movie}">
-        <!-- Movie Name -->
+
         <label for="name">Movie Name :</label>
         <input type="text" id="name" th:field="*{name}" required placeholder="Enter movie name">
         <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 
-        <!-- Genre -->
+
         <label for="genre">Genre Selection 🎬:</label>
         <select id="genre" th:field="*{genre}" required>
             <option value="COMEDY">Comedy 🤣</option>
@@ -119,7 +120,7 @@
             <option value="ACTION">Action 🔥</option>
         </select>
 
-        <!-- Language -->
+
         <label>Language 🌍:</label>
         <div class="radio-group">
             <label>
@@ -133,15 +134,15 @@
             </label>
         </div>
 
-        <!-- Duration -->
+
         <label for="duration">Duration (min) ⏱️:</label>
         <input type="number" id="duration" th:field="*{duration}" min="10" max="300" required>
 
-        <!-- Price -->
+
         <label for="price">Price ($) 💰:</label>
         <input type="number" id="price" th:field="*{price}" step="0.01" min="0" required>
 
-        <!-- Buttons -->
+
         <div class="btn-container">
             <button type="submit" class="btn btn-primary">🎟️ Add Movie</button>
             <a href="/main" class="btn btn-secondary">❌ Cancel</a>

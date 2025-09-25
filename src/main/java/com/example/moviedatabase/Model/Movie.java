@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+
+//Name: Harsheta Sharma
+//Student ID: 991753207
 
 @Entity
 @Table(name="Movies")
@@ -38,7 +40,7 @@ public class Movie {
     @Max(300)
     private int duration;
 
-    @Min(1)
+    @Min(0)
     private double price;
 
     public Movie() {

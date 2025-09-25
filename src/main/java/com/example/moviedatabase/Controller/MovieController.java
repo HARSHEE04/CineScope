@@ -2,21 +2,24 @@ package com.example.moviedatabase.Controller;
 
 import com.example.moviedatabase.Model.Movie;
 import com.example.moviedatabase.Service.MovieService;
-import jakarta.validation.ConstraintViolationException;
+
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import java.util.List;
+
+//Name: Harsheta Sharma
+//Student ID: 991753207
 
 @Controller
 public class MovieController {
 
-    /*
+    /* methods I need to add to the controller
 GET /movies/add (form to add a movie)
 POST /movies/add (submit new movie)
 GET /movies/edit/{id} (form to edit movie)
@@ -34,7 +37,7 @@ GET /movies/search (search movies by name)
     public String listMovies(Model model) {
         List<Movie> movies = movieService.getMovieList();
         model.addAttribute("movies", movies);
-        return "Movies"; // Returns movies.html (Thymeleaf template)
+        return "Movies";
     }
 
     //to view a single movie
@@ -58,11 +61,11 @@ GET /movies/search (search movies by name)
         if (result.hasErrors()) {
             System.out.println("Validation Errors: " + result.getAllErrors());
             model.addAttribute("movie", movie);
-            return "addMovie"; // Reload form with errors
+            return "addMovie"; //if errors don't proceed
         }
 
         movieService.addMovie(movie);
-        return "redirect:/main"; // Success
+        return "redirect:/main";  //continue if success
     }
 
 
@@ -79,7 +82,7 @@ GET /movies/search (search movies by name)
     //to submit the edited movie
     @PostMapping("/edit/{id}")
     public String updateMovie(@PathVariable int id, @ModelAttribute Movie movie) {
-        // Fetch existing movie from database
+        // Fetch  movie from database
         Movie existingMovie = movieService.getMovieById(id);
 
         // Update fields with new values
@@ -100,7 +103,7 @@ GET /movies/search (search movies by name)
     @PostMapping("/delete/{id}")
     public String deleteMovie(@PathVariable int id) {
         movieService.deleteMovie(id);
-        return "redirect:/main"; // Redirect to movie list
+        return "redirect:/main";
     }
 
     //to search movie by name only
@@ -110,10 +113,10 @@ GET /movies/search (search movies by name)
 
         if (movies.isEmpty()) {
             model.addAttribute("error", "No movies found");
-            return "redirect:/main"; // Redirects back if no movie is found
+            return "redirect:/main"; // Redirects back if no movie is found and failed
         }
 
-        model.addAttribute("movie", movies.get(0)); // Assuming you want to display only the first match
+        model.addAttribute("movie", movies.get(0));
         return "movieDetails"; // Displays the details page
     }
 

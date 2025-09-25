@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 
+//Name: Harsheta Sharma
+//Student ID: 991753207
+
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -14,7 +17,7 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        movieRepository.deleteAll(); // Clears all existing movies
+        movieRepository.deleteAll(); // Clears all existing movies so we can start fresh
 
         Movie movie1 = new Movie("Inception", Movie.Genre.DRAMA, Movie.Language.ENGLISH, 148, 12.99);
         Movie movie2 = new Movie("Amélie", Movie.Genre.COMEDY, Movie.Language.FRENCH, 122, 10.99);

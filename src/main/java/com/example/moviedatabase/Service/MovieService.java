@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+//Name: Harsheta Sharma
+//Student ID: 991753207
+
+
 @Service
 public class MovieService {
 
@@ -37,7 +42,7 @@ public class MovieService {
     }
 
 
-    //updateMovie(Movie movie)
+    //updateMovie(Movie movie) updates the movie
     public Movie updateMovie(Movie movie) {
         Optional<Movie> existingMovie = movieRepository.findById(movie.getId());
 
