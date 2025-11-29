@@ -1,6 +1,9 @@
 # CineScope
 
-[🎥 Watch the CineScope Demo](https://youtu.be/BaBvsk_b4Cs)
+<p align="center">
+  <a href="https://youtu.be/BaBvsk_b4Cs" target="_blank">
+  </a>
+</p>
 
 CineScope is a Spring Boot MVC web application for managing a movie catalog, enabling users to add, view, update, delete, and search movies stored in a MySQL database.
 
@@ -28,14 +31,17 @@ CineScope delivers an end-to-end flow for maintaining movie records, from databa
 
 1. **Clone the repository**
 
-git clone https://github.com/HARSHEE04/CineScope.git
-cd CineScope
+  git clone https://github.com/HARSHEE04/CineScope.git
+
+  cd CineScope
 
 2. **Create the MySQL database**
    
+   
  CREATE DATABASE cinescope;
 
- 3. **Configure application properties**  
+ 3. **Configure application properties**
+    
 Update `src/main/resources/application.properties` with your own credentials:
 
 spring.datasource.url=jdbc:mysql://localhost:3306/cinescope
