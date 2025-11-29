@@ -1,9 +1,6 @@
 # CineScope
 
-<p align="center">
-  <a href="https://youtu.be/BaBvsk_b4Cs" target="_blank">
-  </a>
-</p>
+[![Watch the CineScope Demo](https://img.youtube.com/vi/BaBvsk_b4Cs/maxresdefault.jpg)](https://youtu.be/BaBvsk_b4Cs)
 
 CineScope is a Spring Boot MVC web application for managing a movie catalog, enabling users to add, view, update, delete, and search movies stored in a MySQL database.
 
